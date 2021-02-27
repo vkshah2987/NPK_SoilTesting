@@ -1,0 +1,536 @@
+ScreenManager:
+    HomeScreen:
+    DataScreen:
+    InfoScreen:
+    GraphScreen:
+
+
+<InfoScreen>:
+    name: 'info'
+    GridLayout:
+        cols: 1
+        MDToolbar:
+            title: "Information"
+            elevation: 10
+            left_action_items: [['arrow-down', lambda x: app.change_screen('home', 'down')]]
+
+        ScrollView:
+            size_hint: 1.0,0.76
+            pos_hint: {'center_y':0.5}
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint: 1,None
+                height: self.minimum_height
+                padding: 0,25,0,0
+                BoxLayout:
+                    #root.data()
+                    MDLabel:
+                        text: '[u]Fertilizer Details With Crop Code[/u]'
+                        bold: True
+                        markup: True
+                        halign: 'center'
+                GridLayout:
+                    cols:3
+                    spacing: 25
+                    padding:20,45,0,0
+                    GridLayout:
+                        cols: 1
+                        #orientation: 'vertical'
+                        spacing: 25
+                        MDLabel:
+                            text: '[u]Code[/u]'
+                            bold: True
+                            markup: True
+                        MDLabel:
+                            text: '1001'
+                        MDLabel:
+                            text: '1002'
+                        MDLabel:
+                            text: '1003'
+                        MDLabel:
+                            text: '1004'
+                        MDLabel:
+                            text: '1005'
+                        MDLabel:
+                            text: '1006'
+                        MDLabel:
+                            text: '1007'
+                        MDLabel:
+                            text: '1008'
+                        MDLabel:
+                            text: '1009'
+                        MDLabel:
+                            text: '1010'
+                        MDLabel:
+                            text: '1011'
+                        MDLabel:
+                            text: '1012'
+                        MDLabel:
+                            text: '1013'
+                        MDLabel:
+                            text: '1014'
+
+                    GridLayout:
+                        cols: 1
+                        #orientation: 'vertical'
+                        padding: -25,0,0,0
+                        spacing: 25
+                        MDLabel:
+                            text: '[u]Crop[/u]'
+                            bold: True
+                            markup: True
+                        MDLabel:
+                            text: 'Rice'
+                        MDLabel:
+                            text: 'Cotton'
+                        MDLabel:
+                            text: 'Sugarcane'
+                        MDLabel:
+                            text: 'Sunflower'
+                        MDLabel:
+                            text: 'Maize'
+                        MDLabel:
+                            text: 'Ragi'
+                        MDLabel:
+                            text: 'Mustard'
+                        MDLabel:
+                            text: 'Castor'
+                        MDLabel:
+                            text: 'Pigeon Pea'
+                        MDLabel:
+                            text: 'Chick Pea'
+                        MDLabel:
+                            text: 'Cabbage'
+                        MDLabel:
+                            text: 'Tomato'
+                        MDLabel:
+                            text: 'Turmeric'
+                        MDLabel:
+                            text: 'Onion'
+
+                    GridLayout:
+                        cols: 1
+                        #orientation: 'vertical'
+                        padding: -25,0,0,0
+                        spacing: 25
+                        MDLabel:
+                            text: '[u]N-P-K(Kg/ha)[/u]'
+                            bold: True
+                            markup: True
+                        MDLabel:
+                            text: '145-12-160'
+                        MDLabel:
+                            text: '100-5-125'
+                        MDLabel:
+                            text: '140-10-150'
+                        MDLabel:
+                            text: '120-10-200'
+                        MDLabel:
+                            text: '150-10-150'
+                        MDLabel:
+                            text: '75-10-150'
+                        MDLabel:
+                            text: '200-10-200'
+                        MDLabel:
+                            text: '125-5-175'
+                        MDLabel:
+                            text: '190-3-180'
+                        MDLabel:
+                            text: '100-10-200'
+                        MDLabel:
+                            text: '75-10-150'
+                        MDLabel:
+                            text: '100-5-125'
+                        MDLabel:
+                            text: '100-10-150'
+                        MDLabel:
+                            text: '100-10-100'
+
+
+
+<HomeScreen>:
+    name: 'home'
+    ntpb:ntpb
+    phpb:phpb
+    popb:popb
+    mopb:mopb
+    code:code
+    GridLayout:
+        cols: 1
+        MDToolbar:
+            title: "Home"
+            elevation: 10
+            left_action_items: [['menu', lambda x: nav_drawer.set_state('open')]]
+
+        ScrollView:
+            size_hint: 1.0,0.76
+            pos_hint: {'center_y':0.5}
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint: 1,None
+                height: self.minimum_height
+                padding: 0,25,0,0
+                BoxLayout:
+                    #root.data()
+                    MDLabel:
+                        text: '[u]CURRENT READING[/u]'
+                        bold: True
+                        markup: True
+                        halign: 'center'
+                GridLayout:
+                    padding: 0,80,0,0
+                    cols: 1
+                    spacing: 40
+                    BoxLayout:
+                        orientation:'vertical'
+                        spacing:12
+                        padding: 30,0,30,0
+                        MDLabel:
+                            text:'Nitrogen:'
+                        MDProgressBar:
+                            id: ntpb
+                            #value:50
+
+                    BoxLayout:
+                        orientation:'vertical'
+                        spacing:12
+                        padding: 30,0,30,0
+                        MDLabel:
+                            text:'Phosphorus:'
+                        MDProgressBar:
+                            id: phpb
+                            #value:50
+
+                    BoxLayout:
+                        orientation:'vertical'
+                        spacing:12
+                        padding: 30,0,30,0
+                        MDLabel:
+                            text:'Potassium:'
+                        MDProgressBar:
+                            id: popb
+                            #value:50
+
+                    BoxLayout:
+                        orientation:'vertical'
+                        spacing:12
+                        padding: 30,0,30,0
+                        MDLabel:
+                            text:'Moisture:'
+                        MDProgressBar:
+                            id: mopb
+                            #value:50
+
+                GridLayout:
+                    cols:1
+                    padding: 0,325,0,0
+                    BoxLayout:
+                        padding: 30,-150,30,0
+                        MDTextField:
+                            id: code
+                            pos_hint: {'center_x':0.5,'center_y':0.5}
+                            multiline: False
+                            max_text_length: 4
+                            input_filter: 'int'
+                            hint_text: 'Enter Crop Code'
+                            font_size: '15sp'
+                    BoxLayout:
+                        orientation: 'vertical'
+                        MDRaisedButton:
+                            pos_hint: {'center_x':0.25,'center_y':0.5}
+                            text: 'Calculate'
+                            on_release: root.display_value()
+
+
+
+
+    AnchorLayout:
+        anchor_y: 'bottom'
+        MDBottomAppBar:
+            MDToolbar:
+                mode: 'end'
+                icon: 'information-variant'
+                type: 'bottom'
+                on_action_button:
+                    root.manager.transition.direction = 'up'
+                    root.manager.current = 'info'
+
+
+    MDNavigationDrawer:
+        id: nav_drawer
+        GridLayout:
+            cols: 1
+            BoxLayout:
+                padding: 0,-50,0,0
+                Image:
+                    source: 'farm.jpg'
+
+            GridLayout:
+                cols: 1
+                #orientation: 'vertical'
+                padding: 10,-30,0,0
+                MDLabel:
+                    text: '[u]FarmTech | A Farmers Friend[/u]'
+                    markup: True
+                    font_style: 'Subtitle1'
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+            GridLayout:
+                cols: 1
+                padding: 0,-150,0,0
+                OneLineIconListItem:
+                    text: 'Home'
+                    on_press:
+                        root.manager.current = 'home'
+                    IconLeftWidget:
+                        icon: 'home'
+                OneLineIconListItem:
+                    text:'Data'
+                    on_press:
+                        root.manager.transition.direction = 'left'
+                        root.manager.current = 'data'
+                        nav_drawer.set_state('close')
+                    IconLeftWidget:
+                        icon: 'database'
+
+
+<DataScreen>:
+    name: 'data'
+    on_enter: root.data()
+    nitro:nitro
+    phos:phos
+    potas:potas
+    moist:moist
+    date1:date1
+    date2:date2
+
+    GridLayout:
+        cols: 1
+        MDToolbar:
+            title: "Data"
+            elevation: 10
+            left_action_items: [['menu', lambda x: nav_drawer.set_state('open')]]
+
+        BoxLayout:
+            orientation: 'vertical'
+            ScrollView:
+                do_scroll_x: False
+                do_scroll_x: True
+                size_hint: 1.0,0.76
+                pos_hint: {'center_y':0.5}
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint: 1,None
+                    height: self.minimum_height
+                    padding: 0,25,0,0
+                    BoxLayout:
+                        #root.data()
+                        MDLabel:
+                            text: '[u]Recorded Data[/u]'
+                            markup: True
+                            bold: True
+                            halign: 'center'
+
+                    GridLayout:
+                        padding: 0,225,0,0
+                        cols: 2
+                        BoxLayout:
+                            padding: 30,0,0,0
+                            orientation: 'vertical'
+                            spacing: 50
+                            MDLabel:
+                                text: 'Nitrogen'
+                                #halign: 'center'
+
+                            MDLabel:
+                                text: 'Phosphorus'
+                                #halign: 'center'
+
+                            MDLabel:
+                                text: 'Potassium'
+                                #halign: 'center'
+
+                            MDLabel:
+                                text: 'Moisture'
+                                #halign: 'center'
+
+                        BoxLayout:
+                            orientation: 'vertical'
+                            spacing: 50
+                            MDLabel:
+                                id: nitro
+                                #text: '00.00'
+                                halign: 'center'
+
+                            MDLabel:
+                                id: phos
+                                #text: '00.00'
+                                halign: 'center'
+
+                            MDLabel:
+                                id: potas
+                                #text: '00.00'
+                                halign: 'center'
+
+                            MDLabel:
+                                id: moist
+                                #text: '00.00'
+                                halign: 'center'
+
+                    GridLayout:
+                        padding: 0,280,0,0
+                        cols: 3
+                        BoxLayout:
+                            padding: 30,0,-30,0
+                            MDTextField:
+                                id: date1
+                                pos_hint: {'center_x':0.5,'center_y':0.5}
+                                multiline: False
+                                max_text_length: 10
+                                hint_text: 'From Date'
+                                helper_text: 'DD/MM/YYYY'
+                                font_size: '15sp'
+
+                        BoxLayout:
+                            orientation: 'vertical'
+                            MDLabel:
+                                text: ':'
+                                halign: 'center'
+
+                        BoxLayout:
+                            #orientation: 'vertical'
+                            padding: -30,0,30,0
+                            MDTextField:
+                                id: date2
+                                pos_hint: {'center_x':0.5,'center_y':0.5}
+                                multiline: False
+                                max_text_length: 10
+                                hint_text: 'To Date'
+                                helper_text: 'DD/MM/YYYY'
+                                font_size: '15sp'
+                    GridLayout:
+                        cols: 3
+                        padding: 0,365,0,0
+                        BoxLayout:
+                            orientation: 'vertical'
+                            MDRaisedButton:
+                                pos_hint: {'center_x':0.5,'center_y':0.5}
+                                text: 'Previous'
+                                on_release: root.prev_data()
+
+                        BoxLayout:
+                            orientation: 'vertical'
+                            MDRaisedButton:
+                                pos_hint: {'center_x':0.5,'center_y':0.5}
+                                text: 'Find'
+                                on_release: root.find_date()
+
+                        BoxLayout:
+                            orientation: 'vertical'
+                            MDRaisedButton:
+                                pos_hint: {'center_x':0.5,'center_y':0.5}
+                                text: 'Next'
+                                on_release: root.next_data()
+
+
+    MDNavigationDrawer:
+        id: nav_drawer
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: '8dp'
+            padding: '8dp'
+
+            Image:
+                source: 'farm.jpg'
+
+            MDLabel:
+                text: 'FarmTech'
+                font_style: 'Subtitle1'
+                size_hint_y: None
+                height: self.texture_size[1]
+            MDLabel:
+                text: 'A Farmer Friend'
+                font_style: 'Caption'
+                size_hint_y: None
+                height: self.texture_size[1]
+
+            BoxLayout:
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint:(.1, None)
+                    Button:
+                        text: 'Home'
+                        on_press:
+                            root.manager.transition.direction = 'left'
+                            root.manager.current = 'home'
+                            nav_drawer.set_state('close')
+                    Button:
+                        text:'Data'
+                        on_press:
+                            #root.manager.transition.direction = 'right'
+                            root.manager.current = 'data'
+                            #nav_drawer.set_state('close')
+
+            ScrollView:
+
+
+<GraphScreen>:
+    name: 'graph'
+    MDLabel:
+        text: 'Welcome to graph screen'
+        halign: 'center'
+
+    BoxLayout:
+        orientation: 'vertical'
+        MDToolbar:
+            title: "Graph"
+            elevation: 10
+            left_action_items: [['menu', lambda x: nav_drawer.set_state('open')]]
+        Widget:
+
+    MDNavigationDrawer:
+        id: nav_drawer
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: '8dp'
+            padding: '8dp'
+
+            Image:
+                source: 'farm.jpg'
+
+            MDLabel:
+                text: 'FarmTech'
+                font_style: 'Subtitle1'
+                size_hint_y: None
+                height: self.texture_size[1]
+     
+            MDLabel:
+                text: 'A Farmer Friend'
+                font_style: 'Caption'
+                size_hint_y: None
+                height: self.texture_size[1]
+
+            BoxLayout:
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint:(.1, None)
+                    Button:
+                        text: 'Home'
+                        on_press:
+                            root.manager.transition.direction = 'left'
+                            root.manager.current = 'home'
+                            nav_drawer.set_state('close')
+                    Button:
+                        text:'Data'
+                        on_press:
+                            root.manager.transition.direction = 'left'
+                            root.manager.current = 'data'
+                            nav_drawer.set_state('close')
+                    Button:
+                        text:'Graph'
+                        on_press:
+                            #root.manager.transition.direction = 'right'
+                            root.manager.current = 'graph'
+                            #nav_drawer.set_state('close')
+            ScrollView:
